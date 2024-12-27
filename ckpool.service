@@ -1,0 +1,14 @@
+[Unit]
+Description=CKPool Solo Mining Service
+After=network.target bitcoind.service
+
+[Service]
+ExecStart=/usr/local/bin/ckpool -B -l 4 -c /mnt/bitcoin/ckpool/ckpool.conf
+WorkingDirectory=/mnt/bitcoin/ckpool/
+User=david
+Group=david
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
