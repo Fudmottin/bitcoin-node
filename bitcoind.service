@@ -5,8 +5,8 @@ After=network.target
 [Service]
 ExecStart=/usr/local/bin/bitcoind -conf=/mnt/bitcoin/bitcoin.conf -daemon
 ExecStop=/usr/local/bin/bitcoin-cli -conf=/mnt/bitcoin/bitcoin.conf stop
-User=david
-Group=david
+User=bitcoin
+Group=bitcoin
 Type=forking
 PIDFile=/mnt/bitcoin/blockchain/bitcoind.pid
 Restart=on-failure
