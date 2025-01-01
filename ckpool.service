@@ -3,10 +3,12 @@ Description=CKPool Solo Mining Service
 After=network.target bitcoind.service
 
 [Service]
+RuntimeDirectory=ckpool
+RuntimeDirectoryMode=0750
 ExecStart=/usr/local/bin/ckpool -B -l 4 -c /mnt/bitcoin/ckpool/ckpool.conf
 WorkingDirectory=/mnt/bitcoin/ckpool/
-User=david
-Group=david
+User=ckpool
+Group=ckpool
 Restart=always
 RestartSec=30
 
